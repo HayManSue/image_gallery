@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos Slider</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="gallery-wrap">
+        <img src="./daung&kharra/back.png" alt="back" id="backbtn">
+        <div class="gallery">
+            <div class="">
+                <span><img src="./daung&kharra/kharra2.jpg" alt="daung1"></span>
+                <span><img src="./daung&kharra/kharra3.jpg" alt="kharra1"></span>
+                <span><img src="./daung&kharra/daung2.jpg" alt="daung2"></span>
+            </div>
+            <div class="">
+                <span><img src="./daung&kharra/kharra2.jpg" alt="kharra2"></span>
+                <span><img src="./daung&kharra/daung2.jpg" alt="daung3"></span>
+                <span><img src="./daung&kharra/kharra3.jpg" alt="kharra3"></span>
+            </div>
+        </div>
+        <img src="./daung&kharra/next.png" alt="next" id="nextbtn">
+    </div>
+    <script>
+        let scrollContainer = document.querySelector('.gallery');
+        let backBtn = document.getElementById('backbtn');
+        let nextBtn = document.getElementById('nextbtn');
+
+        scrollContainer.addEventListener('wheel', (evt)=>{
+            // evt.preventDefault();
+            // scrollContainer.scrollLeft += evt.deltaY;
+            scrollContainer.style.scrollBehavior = "auto";
+        })
+        backBtn.addEventListener('click', ()=>{
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft -= 900;
+        })
+        nextBtn.addEventListener('click', () =>{
+            scrollContainer.style.scrollBehavior = "smooth";
+            scrollContainer.scrollLeft += 900;
+        })
+    </script>
+</body>
+</html>
